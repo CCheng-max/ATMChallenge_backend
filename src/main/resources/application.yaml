@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /atm
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+app:
+  allowedOrigins:
+    - http://localhost:3000
+    - http://max-olgames.com
+    - https://max-olgames.com

@@ -1,0 +1,29 @@
+{
+  "withdrawAmount":100,
+  "initialBankNotes": [
+    {
+      "bankNoteValue":50,
+      "bankNoteCount":3
+    },
+    {
+      "bankNoteValue":20,
+      "bankNoteCount":8
+    }
+  ],
+  "expectedWithdrawBankNotes":[
+    {
+      "bankNoteValue":50,
+      "bankNoteCount":2
+    }
+  ],
+  "expectedAvailableBankNotes":[
+    {
+      "bankNoteValue":50,
+      "bankNoteCount":1
+    },
+    {
+      "bankNoteValue":20,
+      "bankNoteCount":8
+    }
+  ]
+}
