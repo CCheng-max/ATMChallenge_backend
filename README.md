@@ -40,5 +40,5 @@ The application will be available at http://localhost:3000 and will call the RES
 
 <blockquote>
 <p><span class="color-fg-attention"><svg>...</svg>Note</span><br>
-You can also access the simulator application on my website at [https://max-olgames.com/atm](https://max-olgames.com/atm)</p>
+You can also access the simulator application on my website at https://max-olgames.com/atm</p>
 </blockquote>
