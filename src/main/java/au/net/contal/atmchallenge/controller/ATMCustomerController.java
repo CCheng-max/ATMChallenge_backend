@@ -22,6 +22,11 @@ public class ATMCustomerController {
     @PutMapping(value = "")
     public ResponseEntity<WithdrawResult> withdrawal(@RequestBody WithdrawalRequest withdrawalRequest ){
         WithdrawResult withdrawResult = new WithdrawResult();
+        if(withdrawalRequest.getAmount() <=0){
+            withdrawResult.setResult(false);
+            withdrawResult.setMessage(I18N.INVALID_WITHDRAW_AMOUNT);
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(withdrawResult);
+        }
         try{
             Transaction withdrawalTransaction = atmService.withdrawal( withdrawalRequest);
             withdrawResult.setResult(true);

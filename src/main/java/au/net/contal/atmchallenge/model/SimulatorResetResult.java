@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Map;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Transaction {
-    private int amount;
-    private List<BankNote> bankNotes;
+public class SimulatorResetResult {
+    private String message;
+    private Map<String, BankNote> availableBankNotes;
 }

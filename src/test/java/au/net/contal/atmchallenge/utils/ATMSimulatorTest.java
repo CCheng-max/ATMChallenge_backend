@@ -89,7 +89,7 @@ public class ATMSimulatorTest {
         ATMSimulator atmSimulator = new ATMSimulator(withDrawTest.getInitialBankNotes());
         List<BankNote> bankNotes = atmSimulator.withdraw(withDrawTest.withdrawAmount);
         System.out.println(withDrawTest);
-        assertEquals(withDrawTest.expectedAvailableBankNotes,atmSimulator.availableBankNotes());
+        assertEquals(withDrawTest.expectedAvailableBankNotes, new ArrayList<>(atmSimulator.availableBankNotes().values()));
         assertEquals(withDrawTest.expectedWithdrawBankNotes, bankNotes);
     }
     @ParameterizedTest
@@ -108,7 +108,7 @@ public class ATMSimulatorTest {
         }catch (Exception e){
             assertEquals(UnavailableBankNoteCombinationException.class, e.getClass());
         }
-        assertEquals(withDrawTest.expectedAvailableBankNotes,atmSimulator.availableBankNotes());
+        assertEquals(withDrawTest.expectedAvailableBankNotes,new ArrayList<>(atmSimulator.availableBankNotes().values()));
     }
     @ParameterizedTest
     @JsonFileSource( resources={
@@ -123,6 +123,6 @@ public class ATMSimulatorTest {
         }catch (Exception e){
             assertEquals(NotEnoughBankNotesException.class, e.getClass());
         }
-        assertEquals(withDrawTest.expectedAvailableBankNotes,atmSimulator.availableBankNotes());
+        assertEquals(withDrawTest.expectedAvailableBankNotes,new ArrayList<>(atmSimulator.availableBankNotes().values()));
     }
 }

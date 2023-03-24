@@ -55,7 +55,12 @@ public class ATMSimulator {
         });
     }
 
-    public List<BankNote> availableBankNotes(){
-        return banknotes.values().stream().map(b->b.clone()).collect(Collectors.toList());
+    public Map<String,BankNote> availableBankNotes(){
+        Map<String, BankNote> availableBankNotes =new LinkedHashMap<>();
+        //clone the availableBankNotes to avoid accidentally updating
+        banknotes.entrySet().stream().forEach(entry -> {
+            availableBankNotes.put("AUD" + entry.getKey(), entry.getValue().clone());
+        });
+        return availableBankNotes;
     }
 }
