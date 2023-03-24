@@ -39,6 +39,6 @@ npm start
 The application will be available at http://localhost:3000 and will call the REST APIs of the backend to perform the simulation.
 
 <blockquote>
-<p><span class="color-fg-attention"><svg>...</svg>Note</span><br>
+<p><span class="color-fg-attention">Note</span><br>
 You can also access the simulator application on my website at https://max-olgames.com/atm</p>
 </blockquote>
